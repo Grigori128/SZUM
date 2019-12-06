@@ -6,7 +6,7 @@ printf "Prosty skrypt sterujący robotem Darwin\n\n"
 while :
  do
 
-printf "Proszę wybrać sekwencję: \n\n [0] - powrót do pozycji startowej \n [1] - ruch głową po okręgu \n [2] - imitacja ukłonu \n [3] - ruch torsu po elipsie \n [4] - znak ""tak"" \n [5] - znak ""nie"" \n [6] - jednoczesny ruch okrężny głowy i torsu robota \n [7] - wyjście\n\n"
+printf "Proszę wybrać sekwencję: \n\n [0] - powrót do pozycji startowej \n [1] - ruch głową po okręgu \n [2] - imitacja ukłonu \n [3] - ruch torsu po elipsie \n [4] - znak ""tak"" \n [5] - znak ""nie"" \n [6] - jednoczesny ruch okrężny głowy i torsu robota \n [7] - ruch głowa w ksztalcie znaku nieskonczonosci (figura lissajous) \n [8] - ruch głowa w ksztalcie ryby (figura lissajous) \n [9] - wyjscie \n\n"
 
 	read type
 
@@ -40,7 +40,17 @@ printf "Proszę wybrać sekwencję: \n\n [0] - powrót do pozycji startowej \n [
 			printf "\nWykonuje: Jednoczesny ruch okrężny głowy i torsu robota"
 			matlab -nodisplay -r 'RobotMotion(6);exit';;
 
-		"7") 	exit;;
+		"7") 
+			printf "\nWykonuje: Ruch glowa w ksztalcie znaku nieskonczonosci (figura lissajous)"
+			matlab -nodisplay -r 'RobotMotion(7);exit';;	
+		
+		"8")
+			printf "\nWykonuje: Ruch glowa w ksztalcie ryby (figura lissajous)"
+			matlab -nodisplay -r 'RobotMotion(8);exit';;
+
+		"9")    
+			exit;;
+
 		
 		*)	printf "\nBłędny wybór\n"
 	esac

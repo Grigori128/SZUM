@@ -28,12 +28,16 @@ Aby poprawnie uruchomić symulacje robota w programie Gazebo, należy postępowa
      - 4 znak "tak"
      - 5 znak "nie"
      - 6 jednoczesny ruch okrężny torsu i głowy robota
-     - 7 wyjście 
+     - 7 zakreślanie głową znaku nieskończoności
+     - 8 kreślenie głową "rybki"
+     - 9 wyjście 
  
 
 8. Po wybraniu  numeru, zostanie uruchomiony program "Matlab" a następnie robot wykona daną sekwencję.
 
 9. Po wykonaniu żądanych ruchów robot oczekuje na wybór kolejnej sekwencji.
+
+UWAGA! W celu uniknięcia upadków robota, zaleca się resetowanie położenia modelu w Gazebo za pomocą kombinacji klawiszy CTRL+SHIFT+R, po wykonaniu danej sekwencji.
 
 UWAGA! W przypadku błędów/awarii w katalogu SZUM usuwamy folder "catkin_ws" i ponownie uruchamiamy skrypt gazebo_setup.sh (należy ponowić czynności od punktu 4 włącznie)
 

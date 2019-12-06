@@ -56,22 +56,28 @@ try
 		%uklon
 		cel{1} = @(time)[0, 0; 0.02, 0];
 		t_end(1) = 2.5;
+        %kiwniecie
+		cel{2} = @(time)[-0.2, 0; 0, 0];
+		t_end(2) = 0.5;
+		%powrot do pionu głowy
+		cel{3} = @(time)[0.2, 0; 0, 0];
+		t_end(3) = 0.5;
 		%powrot do pionu
-		cel{2} = @(time)[0, 0; -0.02, 0];
-		t_end(2) = 2.5;
-		n = 2; %liczba czynnosci
+		cel{4} = @(time)[0, 0; -0.02, 0];
+		t_end(4) = 2.5;
+		n = 4; %liczba czynnosc 
 		reset = 0;
 	    case 3
-		%dojazd na okreg
-		cel{1} = @(time)[0, 0; -0.01, 0];
+		%dojazd na okreg 
+		cel{1} = @(time)[0.2, 0; -0.01, 0];
 		t_end(1) = 0.5;
-		%krecenie torsem poprzez biodra
+		%krecenie torsem poprzez biodra 
 		cel{2} = @(time)[0, 0; 0.005*sin(time), 0.02*cos(time)];
 		t_end(2) = 10*pi;
 		%powrot
-		cel{3} = @(time)[0, 0; 0.01, 0.0];
+		cel{3} = @(time)[-0.2, 0; 0.01, 0.0];
 		t_end(3) = 0.5;
-		n = 3; %liczba czynnosci
+		n = 3; %liczba czynnosci 
 		reset = 0;
 	    case 4
 		% kiwanie glowa - znak tak
@@ -95,17 +101,48 @@ try
 		reset = 0;  
 	    case 6
 		%dojazd na okregi
-		cel{1} = @(time)[0, 0.1; -0.01, 0];
+		cel{1} = @(time)[0.1, 0.1; -0.01, 0];
 		t_end(1) = 0.5;
 		%krecenie torsem i glowa 
 		cel{2} = @(time)[0.2*sin(time), 0.2*cos(time); 0.005*sin(time), 0.02*cos(time)];
 		t_end(2) = 10*pi;
 		%powrot
-		cel{3} = @(time)[0, -0.1; 0.01, 0.0];
+		cel{3} = @(time)[-0.1, -0.1; 0.01, 0.0];
 		t_end(3) = 0.5;
-		n = 3; %liczba czynnosci
+		n = 3; %liczba czynnosci 
 		reset = 0;
-		
+	    case 7
+		%dojazd
+        	cel{1} = @(time)[0.2, 0; 0, 0];
+        	t_end(1) = 0.5;
+        	%
+        	cel{2} = @(time)[0, -0.3; 0, 0];
+        	t_end(2) = 0.5;
+        	%osemki
+        	cel{3} = @(time)[0.2*cos(2*time),0.2*sin(time); 0, 0];
+        	t_end(3) = 32;
+        	%powrot
+        	cel{4} = @(time)[-0.2, 0; 0, 0];
+        	t_end(4) = 0.5;
+        	%
+        	cel{5} = @(time)[0, 0.3; 0, 0];
+        	t_end(5) = 0.5;
+        	%
+        	n = 5;
+        	reset = 0;
+            case 8
+        %dojazd
+        cel{1} = @(time)[0.1, 0; 0, 0];
+        t_end(1) = 0.5;
+        %ryba
+        cel{2} = @(time)[0.3*sin(3*time+pi/4), 0.3*cos(2*time); 0, 0];
+        t_end(2) = 32;
+        %powrot
+        cel{3} = @(time)[-0.1, 0; 0, 0];
+        t_end(3) = 0.5;
+        n = 3; %liczba czynnosci
+        reset = 0;  
+	   
 	end
 
 	%% Petla
