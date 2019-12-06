@@ -33,7 +33,7 @@ Aby poprawnie uruchomić symulacje robota w programie Gazebo, należy postępowa
      - 9 wyjście 
  
 
-8. Po wybraniu  numeru, zostanie uruchomiony program "Matlab" a następnie robot wykona daną sekwencję.
+8. Po wybraniu  numeru, zostanie uruchomiony program Matlab a następnie robot wykona daną sekwencję.
 
 9. Po wykonaniu żądanych ruchów robot oczekuje na wybór kolejnej sekwencji.
 
