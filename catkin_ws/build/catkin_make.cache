@@ -1,0 +1,2 @@
+darwin_control:darwin_description:darwin_gazebo
+-DCATKIN_DEVEL_PREFIX=/home/suillus/Desktop/SZUM/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/suillus/Desktop/SZUM/catkin_ws/install -G Unix Makefiles
