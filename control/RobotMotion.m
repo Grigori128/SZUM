@@ -1,10 +1,8 @@
 function RobotMotion(C)
-% Funkcja realizuje dostarczane z interfejsu użytkownika komendy dotyczące wybranych sekwencji ruchów robota. Na podstawie przekazanego parametru "C" wykonywany jest odpowiedni ruch (poprzez wywołanie innych funkcji).
+% Funkcja realizuje dostarczane z interfejsu użytkownika komendy, dotyczące wybranych sekwencji ruchów robota. Na podstawie przekazanego parametru "C" wykonywany jest odpowiedni ruch (poprzez wywołanie innych funkcji).
 % RobotMotion(wybrana sekwencja)
 
 try % sprawdzamy czy symulacja dziala poprawnie
-    % C = 1:8;
-    
     
     try
         rostopic list;
@@ -38,7 +36,11 @@ try % sprawdzamy czy symulacja dziala poprawnie
     
     %% Zdefiniowanie celu
     
+    %funkcja celu jest definiowana wg wzoru:
     %cel = @(time)[vx_g vy_g vx_u vy_u];
+    
+    %vx_g/vy_g - predkosc liniowa glowy na osi X/Y
+    %vx_u/vy_u - predkosc liniowa uda na osi X/Y
     
     switch C
         case 0
@@ -48,7 +50,7 @@ try % sprawdzamy czy symulacja dziala poprawnie
             cel{1} = @(time)[0, 0.1; 0, 0];
             t_end(1) = 0.5;
             %krecenie glowa
-            cel{2} = @(time)[0.2*sin(time), 0.2*cos(time); 0, 0];%[0.12*sin(t+pi), 0.12*cos(t+pi); -0.005*sin(t), 0.010*cos(t)];
+            cel{2} = @(time)[0.2*sin(time), 0.2*cos(time); 0, 0];
             t_end(2) = 10*pi;
             %powrot
             cel{3} = @(time)[0, -0.1; 0, 0];
@@ -65,10 +67,10 @@ try % sprawdzamy czy symulacja dziala poprawnie
             %powrot do pionu głowy
             cel{3} = @(time)[0.2, 0; 0, 0];
             t_end(3) = 0.5;
-            %powrot do pionu
+            %powrot do pionu robota
             cel{4} = @(time)[0, 0; -0.02, 0];
             t_end(4) = 2.5;
-            n = 4; %liczba czynnosc
+            n = 4; %liczba czynnosci
             reset = 0;
         case 3
             %dojazd na okreg
@@ -115,23 +117,22 @@ try % sprawdzamy czy symulacja dziala poprawnie
             n = 3; %liczba czynnosci
             reset = 0;
         case 7
-            %dojazd
+            %dojazd na osi X
             cel{1} = @(time)[0.2, 0; 0, 0];
             t_end(1) = 0.5;
-            %
+            %dojazd na osi Y
             cel{2} = @(time)[0, -0.3; 0, 0];
             t_end(2) = 0.5;
             %osemki
             cel{3} = @(time)[0.2*cos(2*time),0.2*sin(time); 0, 0];
             t_end(3) = 32;
-            %powrot
+            %powrot (os X)
             cel{4} = @(time)[-0.2, 0; 0, 0];
             t_end(4) = 0.5;
-            %
+            %powrot (os Y)
             cel{5} = @(time)[0, 0.3; 0, 0];
             t_end(5) = 0.5;
-            %
-            n = 5;
+            n = 5; %liczba czynnosci
             reset = 0;
         case 8
             %dojazd
@@ -217,7 +218,6 @@ try % sprawdzamy czy symulacja dziala poprawnie
     end
     
     
-    %exit;
 catch
     disp('Błąd symulacji, proszę czekać. Czy symulacja w gazebo jest uruchomiona?');
 end

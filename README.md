@@ -11,6 +11,8 @@ Funkcja "RobotMotion.m", na podstawie wybranej sekwencji, realizuje sterowanie r
 
 W celu spełnienia wymogu automatycznego uruchomienia symulacji, napisano skrypt konfiguracyjny środowiska Gazebo "gazebo_setup.sh", a także skrypt pod Matlaba "matlabbash.sh", umożliwiający wybór sekwencji.
 
+Dodatkowo zamieszczono plik skryptowy "turtlectrl.m", pozwalalący na sterowanie żółwiem w ROS-ie, z wykorzystaniem metody Lapunowa. Plik ten NIE jest wykorzystywany w głównym projekcie.
+
 ## Instrukcja uruchomienia
 
 UWAGA! Do poprawnego działania poniższego programu wymagane są: 
