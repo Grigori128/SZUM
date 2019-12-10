@@ -7,7 +7,6 @@ sudo apt install git
 sudo apt install ros-melodic-effort-controllers
 sudo apt install ros-melodic-hector-gazebo-plugins
 sudo apt install ros-melodic-hector-gazebo
-sudo apt install xdotool
 
 mkdir catkin_ws
 cd catkin_ws
