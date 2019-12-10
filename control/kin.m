@@ -1,5 +1,8 @@
 function [P,A1,Hat] = kin(theta)
-    
+%Na podstawie katów konfiguracyjnych wyznaczane sa polozenia w układzie kartezjanskim
+%[polozenia koncowek czlonow w ukladzie kartezjanskim, pomocnicza macierz A1, pomocnicza macierz Hat] = kin(wektor polozen katowych czlonow)
+%Macierze A1 oraz Hat wystawiane sa w celu przyspieszenia obliczen jakobianu (ponowne liczenie ZPK nie jest wtedy konieczne)
+ 
     %obliczanie polozenia glowy robota
     theta1_g = theta(1);
     theta2_g = theta(2);

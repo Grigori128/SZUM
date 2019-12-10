@@ -1,4 +1,6 @@
 function dtheta = invkin(t,theta,cel)
+%Funkcja realizuje zadanie kinematyki odwrotnej
+% wektor predkosci katowych = invkin(wektor czasu,wektor katow konfiguracyjnych,funkcja anonimowa określająca zadane prędkości postępowe)
 
 %zadane predkosci koncowki roboczej
 c=cel(t);
