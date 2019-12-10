@@ -61,7 +61,7 @@ Aby poprawnie uruchomić symulację robota w programie Gazebo, należy postępow
 
 UWAGA! W celu uniknięcia upadków robota, zaleca się resetowanie położenia modelu w Gazebo za pomocą kombinacji klawiszy `CTRL+SHIFT+R`, po wykonaniu danej sekwencji.
 
-UWAGA! W przypadku błędów/awarii w katalogu SZUM usuwamy folder "catkin_ws" i ponownie uruchamiamy skrypt gazebo_setup.sh (należy ponowić czynności od punktu 4 włącznie)
+UWAGA! W przypadku błędów/awarii, wyłączamy Gazebo, w katalogu SZUM usuwamy folder "catkin_ws" i ponownie uruchamiamy skrypt gazebo_setup.sh (należy ponowić czynności od punktu 4 włącznie).
 
 UWAGA! W celu resetowania świata w Gazebo należy używać tylko i wyłącznie kombinacji klawiszy `CTRL+SHIFT+R`.
 W przypadku użycia kombinacji `CTRL+R`, należy wyłączyć program Gazebo oraz terminal, przez który został włączony, usunąć folder "catkin_ws" z katalogu "SZUM", a następnie otworzyć nowy terminal w katalogu "SZUM" oraz uruchomić ponownie skrypt gazebo_setup.sh (należy ponowić czynności od punktu 4 włącznie).
